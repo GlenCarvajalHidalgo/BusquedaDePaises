@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Glen Carvajal">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="shorcuit icon" href="/imgs/plateta tierra logo.webp">
+    <title>Paises del mundo</title>
+</head>
+<body>
+    <header>
+        <div class="burger" id="burger">
+            <img src="/imgs/Nabegacion icon.png" alt="burger" class="burger-img" >
+        </div>
+        <nav class="navegacion" id="navegacion">
+            <a href="/index.html" class="navegacion-texto">Index</a>
+            <a href="/paginas/filtradoNombre.html" class="navegacion-texto">Búsqueda por nombre</a>
+            <a href="#" class="navegacion-texto">Búsqueda por región</a>
+        </nav>
+    </header>
+    <img src="/imgs/Plateta tierra.png" alt="Imagen del planeta tierra" class="fondo-pantalla blur">
+    <main class="contenedor">
+        <section>
+            <form class="formulario" onsubmit="return false;">
+                <label class="texto texto-sombra">Region:</label>
+                <select id="cmbEntrada" class="entrada" onkeydown="FiltrarEnter(event)">
+                    <option value="" selected></option>
+                    <option value="Americas">América</option>
+                    <option value="Europe">Europa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Africa">África</option>
+                    <option value="Oceania">Oceania</option>Antarctic
+                    <option value="Antarctic">Antartida</option>
+                </select>
+                <input id="btnAceptar" class="btn" type="button" value="Aceptar" onclick="FiltrarRegion()">
+            </form>
+        </section>
+        <section id="paisesRegion" class="paises">
+            
+            <!--Contenido-->
+
+        </section>
+
+        <section id="modal">
+
+            <!--Contenido-->
+
+        </section>
+    </main>
+    <script src="/index.js"></script>
+</body>
+</html>

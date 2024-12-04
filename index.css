@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+
+.fondo-pantalla{
+    position: fixed;
+    z-index: -10;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    min-width: 100vw;
+}
+.blur{
+    filter: blur(8px);
+}
+.btn{
+    background-color: rgb(10, 10, 67);
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: white;
+    padding: 4px 8px;
+    margin: 8px 0px;
+    box-shadow: 1px 1px 4px black;
+}
+.btn:hover{
+    background-color: rgb(39, 39, 101);
+    border-color: gray;
+}
+.texto, .navegacion-texto, .titulo, .entrada, .volver{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.5em;
+}
+.texto-sombra{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-weight: 700;
+    text-decoration: none;
+}
+.titulo{
+    font-size: 2.0em;
+}
+.entrada{
+    height: 35px;
+    width: 100%;
+    margin: 5px auto;
+    border: 2px solid gray;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px black;
+}
+.volver{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    text-decoration: none;
+    color: white;
+    z-index: 1;
+}
+.volver:hover{
+    text-decoration: underline;
+}
+.volver::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: -160px;
+    left: -160px;
+    width: 250px;
+    height: 250px;
+    z-index: -1;
+    transform: rotate(50deg);
+}
+.tarjeta{
+    width: 220px;
+    box-shadow: 1px 1px 10px black;
+    background-color: rgb(165, 238, 165);
+    border-radius: 6px;
+    padding: 0px 10px 10px;
+    transition: 0.15s;
+}
+.tarjeta:hover{
+    background-color: rgb(206, 240, 206);
+}
+.navegacion{
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    right: -80vw;
+    width: 80vw;
+    max-width: 400px;
+    height: 100vh;
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.navegacion.active{
+    right: 0px;
+}
+.navegacion-texto{
+    margin: 30px;
+    color: white;
+    text-decoration: none;
+}
+.navegacion-texto:hover{
+    text-decoration: underline;
+}
+.formulario{
+    margin: 20px;
+}
+.burger{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 85px;
+    width: 90px;
+}
+.burger-img{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    height: 35px;
+    width: 40px;
+}
+.burger.active{
+    background-color: rgba(128, 128, 128, 0.4);
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.introduccion{
+    max-width: 1000px;
+    text-align: center;
+    margin: 0px auto;
+}
+.tarjeta2{
+    width: 320px;
+    height: 100px;
+    box-shadow: 1px 1px 10px black;
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+    transition: 0.15s;
+    display: flex;
+    justify-content: center;
+}
+.tarjeta2:hover{
+    transform: scale(98%);
+}
+.targetas2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.contenedor{
+    margin: 100px auto;
+    max-width: 1200px;
+}
+.paises{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.tarjeta{
+    width: 98%;
+    box-shadow: 1px 1px 10px gray;
+    background-color: rgb(165, 238, 165);
+    border-radius: 6px;
+    padding: 0px 15px;
+    transition: 0.15s;
+
+    display: flex;
+    justify-content: space-between;
+}
+.tarjeta:hover{
+    background-color: rgb(206, 240, 206);
+    box-shadow: 1px 1px 15px rgb(112, 112, 112);
+}
+
+
+
+.fondo{
+    background-color: rgba(255, 0, 0, 0);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.modal::after{
+    content: url(/imgs/Plateta\ tierra.png);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: -2;
+    filter:opacity(90%) blur(100px) ;
+}
+.modal{
+    background-color: rgb(10, 10, 67);
+    overflow: hidden;
+    position: fixed;
+    top: 100px;
+    right: 8vw;
+    width: 65vw;
+    max-width: 650px;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 6px;
+    padding: 30px;
+    z-index: 1;
+    transition: 0.3s;
+    animation-name: animacion2;
+    animation-duration: 0.2s;
+    color: white;
+}
+.bandera{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 3px;
+
+    height: 20%;
+    z-index: -1;
+    box-shadow: 1px 1px 6px black;
+}
+
+@keyframes animacion2{
+    0% {transform: translateX(800px);}
+    100% {transform: translateX(0px);}
+}
+
+
+@keyframes animacion4{
+    0% {transform: scale(100%);
+    filter: opacity(100%);}
+    100% {transform: scale(130%);
+    filter: opacity(0%);}
+}
+
+@media(min-width: 650px){
+    .navegacion{
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        max-width: none;
+        height: 120px;
+        transition: 0s;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    .contenedor{
+        margin: 170px auto;
+    }
+}
