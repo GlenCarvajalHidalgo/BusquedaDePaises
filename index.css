@@ -198,7 +198,7 @@
     z-index: -1;
 }
 .modal::after{
-    content: url(/imgs/Plateta\ tierra.png);
+    content: url(https://glencarvajalhidalgo.github.io/BusquedaDePaises/imgs/Plateta\ tierra.png);
     position: absolute;
     top: 0px;
     left: 0px;
