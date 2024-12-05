@@ -230,7 +230,7 @@
     right: 10px;
     border-radius: 3px;
 
-    height: 20%;
+    height: 15%;
     z-index: -1;
     box-shadow: 1px 1px 6px black;
 }
@@ -279,6 +279,7 @@
     .bandera{
         bottom: 15px;
         right: 15px;
+        height: 20%;
     }
 }
 @media(min-width: 850px){
