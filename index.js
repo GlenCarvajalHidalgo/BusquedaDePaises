@@ -20,41 +20,44 @@ async function ObtenerPais(cca2){
 //Recuperar el valor del txt y cmb del session storage
 (function (){
     const texto = window.document.getElementById('txtEntrada');
+    const cmb = window.document.getElementById('cmbEntrada');
     if(texto != null){
         texto.value = sessionStorage.getItem("texto");
     }
-    else{
-        window.document.getElementById('cmbEntrada').value = sessionStorage.getItem("region");
+    else if(cmb != null){
+        cmb.value = sessionStorage.getItem("region");
     }
 })();
 //Obtener los paises del session storage o mediante una solicitud 
 (async function (){
     try {
-        paises = JSON.parse(localStorage.getItem('paises'));
-        //Si no se encuentra en el session storage se hace una solicitud
-        if(paises == null || paises.length < 200){
-            const resultado = await ObtenerPaises();
-            paises = resultado.map((valor) => {//Se guarda solo lo necesario
-                return {
-                    'nombre': valor.translations.spa.common,
-                    'cca2': valor.cca2,
-                    'region': valor.region
-                }
-            });
-            localStorage.setItem('paises', JSON.stringify(paises));
-            console.log('solicitud servidor');
-        }
-        else{
-            console.log('extracción local');
-        }
-
-        //Dependiendo de la página se hace un filtrado u otro
-        const paisesNombre = document.getElementById("paisesNombre");
-        if(paisesNombre != null){
-            FiltrarNombre();
-        }
-        else{
-            FiltrarRegion();
+        if (document.getElementById('principal') == null){
+            paises = JSON.parse(localStorage.getItem('paises'));
+            //Si no se encuentra en el session storage se hace una solicitud
+            if(paises == null || paises.length < 200){
+                const resultado = await ObtenerPaises();
+                paises = resultado.map((valor) => {//Se guarda solo lo necesario
+                    return {
+                        'nombre': valor.translations.spa.common,
+                        'cca2': valor.cca2,
+                        'region': valor.region
+                    }
+                });
+                localStorage.setItem('paises', JSON.stringify(paises));
+                console.log('solicitud servidor');
+            }
+            else{
+                console.log('extracción local');
+            }
+    
+            //Dependiendo de la página se hace un filtrado u otro
+            const paisesNombre = document.getElementById("paisesNombre");
+            if(paisesNombre != null){
+                FiltrarNombre();
+            }
+            else{
+                FiltrarRegion();
+            }
         }
     } catch (error) {
         alert('Error al cargar los paises');
